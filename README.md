@@ -1,6 +1,6 @@
 # Democratizing Weather Data
 
-This Python package is designed to make the QLCD surface weather
+This Python package is designed to make the QCLCD surface weather
 station data from the National Oceanic and Atmospheric Administration
 (NOAA) more accessible to data science audiences and the general public.
 Weather data contains a wealth of information gathered from Earth Observing
