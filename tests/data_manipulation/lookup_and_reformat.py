@@ -8,7 +8,7 @@ import unittest
 import os
 
 
-class TestJoinsAndTransforms(unittest.TestCase):
+class TestLookupAndReformat(unittest.TestCase):
     """
     Test suite for all data joins and transforms for 
     """
