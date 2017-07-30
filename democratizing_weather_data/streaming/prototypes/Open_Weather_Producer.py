@@ -47,6 +47,7 @@ def main():
     file_producer = FileProducer(topic_name, normal_json)
     print('Calling file_producer.start()')
     file_producer.run()
+    time.sleep(10)
     print('printing done')
 
 if __name__ == "__main__":
