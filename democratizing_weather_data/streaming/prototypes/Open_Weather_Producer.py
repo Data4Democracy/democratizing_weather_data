@@ -18,6 +18,7 @@ class FileProducer(threading.Thread):
     def run(self):
         print('About to create our kafka producer')
         producer = KafkaProducer(bootstrap_servers='localhost:9092')
+        time.sleep(10)
 
         print('About to send the json file: ' , self.normal_json)
       
@@ -47,7 +48,6 @@ def main():
     file_producer = FileProducer(topic_name, normal_json)
     print('Calling file_producer.start()')
     file_producer.run()
-    time.sleep(10)
     print('printing done')
 
 if __name__ == "__main__":
