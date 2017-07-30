@@ -11,15 +11,17 @@ class FileProducer(threading.Thread):
     def __init__(self, topic_name, pairs):
         threading.Thread.__init__(self)
         self.topic_name = topic_name
-        self.normal_json = normal_json
+        self.pairs  = pairs
 
     daemon = True
 
     def run(self):
         print('About to create our kafka producer')
         producer = KafkaProducer(bootstrap_servers='localhost:9092')
+        time.sleep(10)
+        producer.send(self.topic_name, str(self.pairs).encode('utf-8'))
 
-        print('About to send the json file: ' , self.normal_json)
+        #print('About to send the json file: ' , self.normal_json)
       
 
         """
