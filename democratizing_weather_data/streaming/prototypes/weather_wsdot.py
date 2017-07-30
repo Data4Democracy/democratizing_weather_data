@@ -21,6 +21,7 @@ class FileProducer(threading.Thread):
         
         """
         producer.send(self.topic_name, str(self.pairs).encode('utf-8'))
+        time.sleep(1)
 
 def main():
     url_name, topic_name = sys.argv[1:]
