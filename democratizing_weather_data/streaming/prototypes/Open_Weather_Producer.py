@@ -31,26 +31,18 @@ class FileProducer(threading.Thread):
         """
 
 def main():
-    #TODO make url an argument isntead of hard-coded.
+    #TODO make url an argument isntead of hard-coded
+    #below sample url and api key for testing
+    #http://samples.openweathermap.org/data/2.5/weather?zip=98005,us&appid=
+    #api_key=b1b15e88fa797225412429c1c50c122a1
+    #url = "http://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid="+ api_key
+    url_name, api_key, topic_name, = sys.argv[1:]
+    final_url = url_name + api_key
+    print(final_url)
+    request = requests.get(final_url)
+    response = request.json()
 
-    topic_name = sys.argv[1:]
-
-    """
-    file_name, column_name, topic_name = sys.argv[1:]
-    bellevue = pd.read_csv(file_name)
-    print("stl_min colujmn: " , list(bellevue[column_name]))
-    pairs = list(bellevue[column_name])
-    """
-    #woeid 2502265 is for Sunnyvale CA. Replace this ID with any other ID for other weather forecasts.
-    #Find other IDs on http://www.woeidlookup.com/
-    url = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%3D2502265&format=json&diagnostics=true&callback=' 
-    # select * from weather.forecast where woeid %3D 2502265 & format=json & diagnostics=true & callback=' 
-
-
-    url_obj = urllib.urlopen(url)
-    raw_json = json.load(url_obj)
-    normal_json = json_normalize(raw_json['query']['results']['channel']) 
-
+    
     print('About to call FileProducer')
     file_producer = FileProducer(topic_name, normal_json)
     print('Calling file_producer.start()')
