@@ -46,7 +46,7 @@ def main():
 
     
     print('About to call FileProducer')
-    file_producer = FileProducer(topic_name, normal_json)
+    file_producer = FileProducer(topic_name, response)
     print('Calling file_producer.start()')
     file_producer.run()
     print('printing done')
