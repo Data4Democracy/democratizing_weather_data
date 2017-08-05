@@ -1,10 +1,9 @@
-import sys
+import json
 import logging
 import multiprocessing
-import json
+import sys
 import time
-
-from kafka import KafkaConsumer
+import kafka
 
 basefile_name = topic_name
 filename = 'weather.json'
@@ -25,8 +24,8 @@ class Consumer(multiprocessing.Process):
       for message in consumer:
         #if message == 'karan':
             print (message)
-            with open (full_filename,'w')as outputfile
-            json.dump(message, outputfile)
+            with open (full_filename,'w')as outputfile:
+                json.dump(message, outputfile)
             message_id=message_id+1
 
 
