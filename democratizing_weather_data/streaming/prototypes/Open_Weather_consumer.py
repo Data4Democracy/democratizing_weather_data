@@ -18,17 +18,17 @@ class Consumer(multiprocessing.Process):
     daemon = True
 
     def run(self):
-        consumer = KafkaConsumer(bootstrap_servers='localhost:9092',\
+        consumer = KafkaConsumer(bootstrap_servers='localhost:9092',
                                  auto_offset_reset='earliest')
         consumer.subscribe(self.topic_name)
 
       for message in consumer:
         #if message == 'karan':
             print (message)
-			with open (full_filename,'w')as outputfile 
-			json.dump(message, outputfile)
+            with open (full_filename,'w')as outputfile
+            json.dump(message, outputfile)
             message_id=message_id+1
-			
+
 
 
 def main():
