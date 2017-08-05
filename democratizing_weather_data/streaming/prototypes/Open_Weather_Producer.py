@@ -1,4 +1,4 @@
-import sys   
+import SYS   
 import threading, logging, time
 import json
 import urllib
