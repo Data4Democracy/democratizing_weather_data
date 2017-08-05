@@ -1,0 +1,6 @@
+The building steps:
+1. create a topic: wsdot_weather_test
+2. create a producer.py, and upload it to the server
+3. create a consumer.py, and upload it to the server
+4. test the pipeline
+5. modify the consumer.py, run it locally
