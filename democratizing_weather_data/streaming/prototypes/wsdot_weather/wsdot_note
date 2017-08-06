@@ -1,6 +1,19 @@
 The building steps:
-1. create a topic: wsdot_weather_test
+1. create a topic on server, for example:
+    create topic :<wsdot_weather_test> usingn the following command line:
+    ./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic wsdot_weather_test
+
+    You can check the topic list using:
+    ./kafka-topics.sh --list --zookeeper localhost:2181
+
 2. create a producer.py, and upload it to the server
+    run the producer.py like:
+    wsdot_weather_producer_server.py wsdot_weather_test "http://wsdot.wa.gov/Traffic/api/WeatherInformation/WeatherInformationREST.svc/GetCurrentWeatherInformationAsJson?AccessCode={acaec82a-bb6b-49cb-b199-35b2449dc3a0}"
+
 3. create a consumer.py, and upload it to the server
+    run the comsumer.py like:
+    wsdot_weather_consumer_server_oldVersion.py wsdot_weather_test
+
 4. test the pipeline
+
 5. modify the consumer.py, run it locally
