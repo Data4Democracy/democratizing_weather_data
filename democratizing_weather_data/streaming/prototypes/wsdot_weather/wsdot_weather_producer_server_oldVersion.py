@@ -15,10 +15,9 @@ class FileProducer(threading.Thread):
     def run(self):
         print('About to create the weather_wsdot kafka producer')
         producer = KafkaProducer(bootstrap_servers = 'localhost:9092')
-
         """
         print('About to run a for loop over all our pairs: ', self.pairs)
-        
+
         """
         producer.send(self.topic_name, str(self.pairs).encode('utf-8'))
         time.sleep(1)

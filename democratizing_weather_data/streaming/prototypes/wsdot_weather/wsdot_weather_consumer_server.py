@@ -19,9 +19,10 @@ class Consumer (multiprocessing.Process):
         consumer.subscribe(self.topic_name)
 
         for message in consumer:
-            print (message.value)
-            with open('test_store_consumer_wsdot', 'w') as outfile:
-                json.dump(message.value.decode('utf-8'), outfile)
+            print (message.value.decode('utf-8'))
+            with open('test_store_consumer_wsdot.json', 'w') as outfile:
+                outfile.write(message.value.decode('utf-8'))
+                #json.dump(message.value.decode('utf-8'), outfile)
                 """
                 from leo
                 source: https://stackoverflow.com/questions/5309978/sprintf-like-functionality-in-python
