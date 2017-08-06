@@ -5,6 +5,7 @@ import urllib
 from kafka import KafkaProducer
 import pandas as pd
 from pandas.io.json import json_normalize
+import requests
 
 class FileProducer(threading.Thread):
 
@@ -19,7 +20,9 @@ class FileProducer(threading.Thread):
         print('About to create our kafka producer')
         producer = KafkaProducer(bootstrap_servers='localhost:9092')
         time.sleep(10)
+        print('About to send the json file: ' , self.pairs)
         producer.send(self.topic_name, str(self.pairs).encode('utf-8'))
+        time.sleep(1)
 
         #print('About to send the json file: ' , self.normal_json)
       
@@ -46,6 +49,7 @@ def main():
 
     
     print('About to call FileProducer')
+    print(response)
     file_producer = FileProducer(topic_name, response)
     print('Calling file_producer.start()')
     file_producer.run()
