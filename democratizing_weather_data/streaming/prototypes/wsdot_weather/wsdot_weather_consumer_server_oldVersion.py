@@ -6,7 +6,6 @@ import time
 
 from kafka import KafkaConsumer
 
-
 class Consumer (multiprocessing.Process):
     def __init__(self, topic_name):
         self.topic_name = topic_name
@@ -19,15 +18,11 @@ class Consumer (multiprocessing.Process):
         consumer.subscribe(self.topic_name)
 
         for message in consumer:
-            print (message.value)
-            with open('test_store_consumer_wsdot', 'w') as outfile:
-                json.dump(message.value.decode('utf-8'), outfile)
-                """
-                from leo
-                source: https://stackoverflow.com/questions/5309978/sprintf-like-functionality-in-python
-                msg_for_json = "%s" (messsage.value)
-                google: python equivalent to sprintf
-                """
+            #message = message.decode("utf-8")
+            print (message)
+            with open('test_store_consumer_wsdot.txt', 'w') as outfile:
+                json.dump(message, outfile)
+
 
 def main():
     topic_name = sys.argv[1:]
