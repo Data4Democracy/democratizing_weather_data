@@ -1,40 +1,18 @@
 import sys
-import threading, logging, time
-from kafka import KafkaProducer
-#import pandas as pd
-import requests
+from kafka import KafkaClient, SimpleProducer
+import json,requests
 
-class FileProducer(threading.Thread):
-    def __init__(self, topic_name, pairs):
-        threading.Thread.__init__(self)
-        self.topic_name = topic_name
-        self.pairs = pairs
+topic = sys.argv[1]
+kafka = KafkaClient('localhost:9092')
 
-    daemon = True
+producer = SimpleProducer(kafka)
 
-    def run(self):
-        print('About to create the weather_wsdot kafka producer')
-        producer = KafkaProducer(bootstrap_servers = 'localhost:9092')
+#url= 'http://countdown.api.tfl.gov.uk/interfaces/ura/instant_V1'
+url = sys.argv[2]
+r = requests.get(url,stream=True)
 
-        """
-        print('About to run a for loop over all our pairs: ', self.pairs)
-        
-        """
-        producer.send(self.topic_name, str(self.pairs).encode('utf-8'))
-        time.sleep(1)
+for line in r.iter_lines():
+	producer.send_messages(topic,line)
+	print(line)
 
-def main():
-    url_name, topic_name = sys.argv[1:]
-    request = requests.get(url_name)
-    response = request.json()
-
-    print('About to call FileProducer')
-    file_producer = FileProducer(topic_name, response)
-    print('Calling file_producer.start()')
-    file_producer.run()
-    print('printing done')
-
-if __name__ == "__main__":
-    main()
-
-
+kafka.close()
