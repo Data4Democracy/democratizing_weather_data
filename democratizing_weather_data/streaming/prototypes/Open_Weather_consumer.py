@@ -34,7 +34,7 @@ def main():
     topic_name = sys.argv[1:]
     consumer = Consumer(topic_name)
     consumer.run()
-    time.sleep(10)
+    time.sleep(1)
 
 
 if __name__ == "__main__":
