@@ -10,6 +10,10 @@ The building steps:
     run the producer.py like:
     wsdot_weather_producer_server.py wsdot_weather_test "http://wsdot.wa.gov/Traffic/api/WeatherInformation/WeatherInformationREST.svc/GetCurrentWeatherInformationAsJson?AccessCode={acaec82a-bb6b-49cb-b199-35b2449dc3a0}"
 
+    'wsdot_weather_producer_server' is a one time running process
+    'wsdot_weather_producer_server_every_minute' is running with interval period using buildin modules
+    'wsdot_weather_producer_server_every_minute_v2' is running with interval period using extra module 'apscheduler'
+
 3. create a consumer.py, and upload it to the server
     run the comsumer.py like:
     wsdot_weather_consumer_server_oldVersion.py wsdot_weather_test
