@@ -14,20 +14,15 @@ class Consumer (multiprocessing.Process):
     daemon = True
 
     def run(self):
-        consumer = KafkaConsumer(bootstrap_servers = 'localhost:9092',\
-                                 auto_offset_reset = 'earliest')
+        consumer = KafkaConsumer(bootstrap_servers = 'localhost:9092',
+                                 auto_offset_reset = 'latest')
         consumer.subscribe(self.topic_name)
 
         for message in consumer:
-            print (message.value)
-            with open('test_store_consumer_wsdot', 'w') as outfile:
-                json.dump(message.value.decode('utf-8'), outfile)
-                """
-                from leo
-                source: https://stackoverflow.com/questions/5309978/sprintf-like-functionality-in-python
-                msg_for_json = "%s" (messsage.value)
-                google: python equivalent to sprintf
-                """
+            print (message.value.decode('utf-8'))
+            with open('test_store_consumer_wsdot.json', 'w') as outfile:
+                outfile.write(message.value.decode('utf-8'))
+
 
 def main():
     topic_name = sys.argv[1:]
@@ -36,8 +31,8 @@ def main():
     time.sleep(10)
 
 if __name__ == "__main__":
-    logging.basicConfig(\
-        format = '%(asctime)s.%(msecs)s:%(name)s:%(thread)d:%(levelname)s:%(process)d:%(message)s',\
-        level = logging.INFO\
+    logging.basicConfig(
+        format = '%(asctime)s.%(msecs)s:%(name)s:%(thread)d:%(levelname)s:%(process)d:%(message)s',
+        level = logging.INFO
     )
     main()
