@@ -7,14 +7,18 @@ The main components of the project are:
 - A set of python scripts that use Apache Kafka and Web API's to gather weather and traffic data from Washington State Dept of Transportation (WSDOT) and Yahoo Query Language (YQL), and save to disk as JSON files.
 - A Jupyter Notebook that aggregates the JSON files into data frames, and does some mapping and graphing.
 
-| Folder | description |
-|-----:|-------------|
-| APIs | sample json files from various weather & traffic API's.  Also contains csv with API calling syntax|
+| Folder    |Description |
+|----------:|:-----------|
+| APIs      | sample json files from various weather & traffic API's.  Also contains csv with API calling syntax|
 |sample_code| Ignore this.  It was used in early develpment then abandoned |
-|prototypes| Jupyter Notebooks|
+|prototypes | Jupyter Notebooks|
+
+|File of Interest | Description |
+|----------------:|:------------|
 
 
-Cool-looking table, huh?  I learned how to do it from [adam-p's markdown cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+_Cool-looking tables, huh?  I learned how to do it from [adam-p's markdown cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)_
 
 ## Running the Python Kafka Scripts
 [TODO] Describe the Bitnami, etc.
