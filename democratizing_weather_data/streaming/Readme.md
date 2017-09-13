@@ -34,9 +34,8 @@ In theory, you could have a python script that simply runs on one machine, makin
 [TODO] Describe Conda, etc.
 
 ## Future Work
-- Add a "files of interest" section.
 - Add isntructions for setting up Bitnami Kafka server & scripts.
-- Add instructions for setting up the conda envirionmnt for Jupyter
+- Add instructions for setting up the conda environment for Jupyter.
 - Create a sandbox repo, and move a bunch of files there.
 - Finalize comprehensive data frames, export to csv, upload to data.world.
-  - Assemble a data dictionary for data.world
+  - Assemble a data dictionary for data.world.
