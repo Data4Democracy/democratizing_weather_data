@@ -15,8 +15,12 @@ The main components of the project are:
 
 |File of Interest | Description |
 |----------------:|:------------|
-
-
+| APIs/API_index.csv | Table of Web API's, inluding url syntax and links to documentation. |
+| APIs/\*.json       | Sample API outputs |
+| streaming/UW_PCE_BIGDATA_230B.ipynb | Currently the best/clearest Jupyter Notebok |
+| streaming/<other ipynb files> | Draft notebooks, low quality, ignore them |
+| Open_Weather/\*.py | Kafka scripts that call openweathermap.org, resulting json has issues |
+| wsdot_weather/\*.py | Kafak scripts designed to call WSDOT and Yahoo Web API's |
 
 _Cool-looking tables, huh?  I learned how to do it from [adam-p's markdown cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)_
 
