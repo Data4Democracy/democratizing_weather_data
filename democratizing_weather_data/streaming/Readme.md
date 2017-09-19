@@ -9,18 +9,18 @@ The main components of the project are:
 
 | Folder    |Description |
 |----------:|:-----------|
-| APIs      | sample json files from various weather & traffic API's.  Also contains csv with API calling syntax|
-|sample_code| Ignore this.  It was used in early develpment then abandoned |
-|prototypes | Jupyter Notebooks|
+|APIs       | Sample json files from various weather & traffic API's.  Also contains csv with API calling syntax.|
+|sample_code| Ignore this.  It was used in early development, then abandoned. |
+|prototypes | Jupyter Notebooks which open multiple json files, combine them into data frames, then do mapping and visualization.|
 
 |File of Interest | Description |
 |----------------:|:------------|
 | APIs/API_index.csv | Table of Web API's, inluding url syntax and links to documentation. |
-| APIs/\*.json       | Sample API outputs |
-| streaming/UW_PCE_BIGDATA_230B.ipynb | Currently the best/clearest Jupyter Notebok |
-| streaming/<other ipynb files> | Draft notebooks, low quality, ignore them |
-| Open_Weather/\*.py | Kafka scripts that call openweathermap.org, resulting json has issues |
-| wsdot_weather/\*.py | Kafak scripts designed to call WSDOT and Yahoo Web API's |
+| APIs/\*.json       | Sample Web API outputs. |
+| streaming/UW_PCE_BIGDATA_230B.ipynb | Currently the best/clearest Jupyter Notebook. |
+| streaming/<other ipynb files> | Draft notebooks, low quality, ignore them. |
+| Open_Weather/\*.py | Kafka scripts that call openweathermap.org, resulting json has issues. |
+| wsdot_weather/\*.py | Kafka scripts designed to call WSDOT and Yahoo Web API's. |
 
 _Cool-looking tables, huh?  I learned how to do it from [adam-p's markdown cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)_
 
@@ -28,7 +28,7 @@ _Cool-looking tables, huh?  I learned how to do it from [adam-p's markdown cheat
 [TODO] Describe the Bitnami, etc.
 
 ## Alternatives to Kafka
-In theory, you could have a python script that simply runs on one machine, making web API calls and saving results to json. The use of kafka was a class project requirement, that may or may not fit your particular use case.  
+In theory, you could have a python script that simply runs on one machine, making web API calls and saving results to json. The use of Kafka was a class project requirement, that may or may not fit your particular use case.  
 
 ## Using the Jupyter Notebook
 [TODO] Describe Conda, etc.
