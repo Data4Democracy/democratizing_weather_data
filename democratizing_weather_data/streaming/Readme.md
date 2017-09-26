@@ -24,15 +24,14 @@ _Cool-looking tables, huh?  I learned how to do it from [adam-p's markdown cheat
 ## Running the Python Kafka Scripts
 [TODO] Describe the Bitnami, etc.
 
+## Setting up the Jupyter Environment & Notebook
+[TODO] Describe Conda, etc.
+
 ## Alternatives to Kafka
 In theory, you could have a python script that simply runs on one machine, making web API calls and saving results to json. The use of Kafka was a class project requirement, that may or may not fit your particular use case.  
 
-## Using the Jupyter Notebook
-[TODO] Describe Conda, etc.
-
 ## Future Work
-- Add isntructions for setting up Bitnami Kafka server & scripts.
+- Add instructions for setting up Bitnami Kafka server & scripts.
 - Add instructions for setting up the conda environment for Jupyter.
-- Create a sandbox repo, and move a bunch of files there.
 - Finalize comprehensive data frames, export to csv, upload to data.world.
   - Assemble a data dictionary for data.world.
