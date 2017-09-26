@@ -7,20 +7,17 @@ The main components of the project are:
 - A set of python scripts that use Apache Kafka and Web API's to gather weather and traffic data from Washington State Dept of Transportation (WSDOT) and Yahoo Query Language (YQL), and save to disk as JSON files.
 - A Jupyter Notebook that aggregates the JSON files into data frames, and does some mapping and graphing.
 
-| Folder    |Description |
-|----------:|:-----------|
-|APIs       | Sample json files from various weather & traffic API's.  Also contains csv with API calling syntax.|
-|sample_code| Ignore this.  It was used in early development, then abandoned. |
-|prototypes | Jupyter Notebooks which open multiple json files, combine them into data frames, then do mapping and visualization.|
 
 |File of Interest | Description |
 |----------------:|:------------|
-| APIs/API_index.csv | Table of Web API's, inluding url syntax and links to documentation. |
+| BigData_Su17_Proposal.pdf | Proposal for the original UW class project. |
+| BigData_Su17_Outbrief.pdf | Final UW class presentation | 
+| APIs/API_index.csv | Table of Web API's, including url syntax and links to API documentation. |
 | APIs/\*.json       | Sample Web API outputs. |
-| streaming/UW_PCE_BIGDATA_230B.ipynb | Currently the best/clearest Jupyter Notebook. |
-| streaming/<other ipynb files> | Draft notebooks, low quality, ignore them. |
-| Open_Weather/\*.py | Kafka scripts that call openweathermap.org, resulting json has issues. |
-| wsdot_weather/\*.py | Kafka scripts designed to call WSDOT and Yahoo Web API's. |
+| prototypes/wsdot_weather/\*.py | Kafka producers which call Web API's; consumers which store outputs as json. |
+| prototypes/UW_PCE_BIGDATA_230B.ipynb | Jupyter Notebook which opens multiple json files, combines them into data frames, then does mapping and visualization.|
+
+Open_Weather/\*.py contains Kafka scripts that call openweathermap.org, but the  resulting json has issues.
 
 _Cool-looking tables, huh?  I learned how to do it from [adam-p's markdown cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)_
 
