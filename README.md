@@ -10,3 +10,6 @@ suitable for machine or human consumption. This package helps to break down
 this barrier for this specific dataset.
 
 (c) Data for Democracy
+
+
+Update on March 26, 2019: This project was marked as archived on the website and the #p-weather-data channel on slack was also archived after a message was left asking if any person was leading or involved with this project. No response. 
